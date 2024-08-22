@@ -1,6 +1,4 @@
 Jewellery
 Stock
 Buying
-Selling
 Accounting
-Transaction
