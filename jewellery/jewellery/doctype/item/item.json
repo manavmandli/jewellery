@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "ITEM.#####",
+ "creation": "2024-08-21 22:46:01.575551",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "item_details_section",
+  "item_name",
+  "item_group",
+  "column_break_lkss",
+  "disabled",
+  "image",
+  "stock_balance_section",
+  "unit_of_measure",
+  "column_break_kzqd",
+  "item_quantity",
+  "column_break_cgdz",
+  "item_weight",
+  "item_purity_section",
+  "purity",
+  "certificate_number",
+  "column_break_altm",
+  "hall_mark_certificate",
+  "description_section",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "item_details_section",
+   "fieldtype": "Section Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Group",
+   "options": "Item Group",
+   "reqd": 1
+  },
+  {
+   "fieldname": "unit_of_measure",
+   "fieldtype": "Link",
+   "label": "Unit of Measure",
+   "options": "Item UOM"
+  },
+  {
+   "fieldname": "item_quantity",
+   "fieldtype": "Int",
+   "label": "Item Quantity"
+  },
+  {
+   "fieldname": "item_weight",
+   "fieldtype": "Float",
+   "label": "Item Weight"
+  },
+  {
+   "fieldname": "column_break_lkss",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disabled",
+   "fieldtype": "Check",
+   "label": "Disabled"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach",
+   "label": "Image"
+  },
+  {
+   "fieldname": "description_section",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "stock_balance_section",
+   "fieldtype": "Section Break",
+   "label": "Stock Balance"
+  },
+  {
+   "fieldname": "column_break_kzqd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_cgdz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_purity_section",
+   "fieldtype": "Section Break",
+   "label": "Item Purity"
+  },
+  {
+   "fieldname": "purity",
+   "fieldtype": "Select",
+   "label": "Purity",
+   "options": "24k\n22k\n18k"
+  },
+  {
+   "fieldname": "certificate_number",
+   "fieldtype": "Data",
+   "label": "Certificate Number"
+  },
+  {
+   "fieldname": "column_break_altm",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "hall_mark_certificate",
+   "fieldtype": "Attach",
+   "label": "Hall Mark Certificate"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-27 23:34:42.614028",
+ "modified_by": "Administrator",
+ "module": "Jewellery",
+ "name": "Item",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,27 +1,39 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:city",
- "creation": "2024-08-22 00:06:13.326868",
+ "autoname": "field:customer_group_name",
+ "creation": "2024-08-28 23:32:33.476079",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "city"
+  "customer_group_name",
+  "column_break_fuvd",
+  "disbled"
  ],
  "fields": [
   {
-   "fieldname": "city",
+   "fieldname": "column_break_fuvd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disbled",
+   "fieldtype": "Check",
+   "label": "Disbled"
+  },
+  {
+   "fieldname": "customer_group_name",
    "fieldtype": "Data",
-   "label": "City",
+   "label": "Customer Group Name",
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 22:53:36.437586",
+ "modified": "2024-08-28 23:33:18.416014",
  "modified_by": "Administrator",
  "module": "Jewellery",
- "name": "City",
+ "name": "Customer Group",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

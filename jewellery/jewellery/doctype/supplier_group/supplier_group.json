@@ -1,27 +1,39 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:city",
- "creation": "2024-08-22 00:06:13.326868",
+ "autoname": "field:supplier_group_name",
+ "creation": "2024-08-21 23:48:43.826465",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "city"
+  "supplier_group_name",
+  "column_break_fuvd",
+  "disbled"
  ],
  "fields": [
   {
-   "fieldname": "city",
+   "fieldname": "supplier_group_name",
    "fieldtype": "Data",
-   "label": "City",
+   "label": "Supplier Group Name",
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_fuvd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "disbled",
+   "fieldtype": "Check",
+   "label": "Disbled"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 22:53:36.437586",
+ "modified": "2024-08-27 23:51:13.626469",
  "modified_by": "Administrator",
  "module": "Jewellery",
- "name": "City",
+ "name": "Supplier Group",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

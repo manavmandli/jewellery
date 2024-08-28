@@ -1,27 +1,29 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:city",
- "creation": "2024-08-22 00:06:13.326868",
+ "autoname": "field:payment_mode",
+ "creation": "2024-08-27 22:55:41.736850",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "city"
+  "payment_mode"
  ],
  "fields": [
   {
-   "fieldname": "city",
+   "fieldname": "payment_mode",
    "fieldtype": "Data",
-   "label": "City",
+   "in_list_view": 1,
+   "label": "Payment Mode",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 22:53:36.437586",
+ "modified": "2024-08-27 22:56:12.859492",
  "modified_by": "Administrator",
  "module": "Jewellery",
- "name": "City",
+ "name": "Payment Mode",
  "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [

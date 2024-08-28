@@ -1,0 +1,158 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CBP.#####",
+ "creation": "2024-08-28 23:50:34.742936",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_u7lz",
+  "amended_from",
+  "section_break_dtze",
+  "customer",
+  "supplier_name",
+  "column_break_tjds",
+  "payment_date",
+  "metal_rate",
+  "section_break_gsvo",
+  "payment_mode",
+  "column_break_qdwb",
+  "column_break_jgiz",
+  "section_break_msxc",
+  "amount",
+  "column_break_bmeq",
+  "purity",
+  "column_break_vxqv",
+  "weight"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_u7lz",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Supplier Bill Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "section_break_dtze",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Customer Name"
+  },
+  {
+   "fieldname": "column_break_tjds",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Datetime",
+   "label": "Payment Date"
+  },
+  {
+   "description": "Pure Metal Rate (Example:- 24k gold 10 gram price enter)",
+   "fieldname": "metal_rate",
+   "fieldtype": "Float",
+   "label": "Metal Rate"
+  },
+  {
+   "fieldname": "section_break_msxc",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "column_break_bmeq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "purity",
+   "fieldtype": "Select",
+   "label": "Purity",
+   "options": "24K\n22K\n18K"
+  },
+  {
+   "fieldname": "column_break_vxqv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Supplier Bill Payment",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "section_break_gsvo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Link",
+   "label": "Payment Mode",
+   "options": "Payment Mode"
+  },
+  {
+   "fieldname": "column_break_qdwb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_jgiz",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-08-28 23:53:26.020569",
+ "modified_by": "Administrator",
+ "module": "Jewellery",
+ "name": "Customer Bill Payment",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

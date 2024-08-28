@@ -21,7 +21,7 @@ Child Table:
 - valid from(date)
 - tax percentage(percentage)
 
-2. Purchese Item Details
+2. Item Details
 
 - Item(link-item)
 - UOM(link-item uom)
@@ -29,21 +29,7 @@ Child Table:
 - quantity(int)
 - amount
 
-3. sales Item Details
-
-- Item(link-item)
-- UOM(link-item uom)
-- purity(float)
-- quantity(int)
-- amount
-
-4. Purchase Taxes and Charges
-
-- type(select)(Actual,On Net Total,On Previous Row Amount,On Previous Row Total,On Item Quantity)
-- Tax Rate(float)
-- amount(currency)
-
-5. Sales Taxes and Charges
+5. Taxes and Charges
 
 - type(select)(Actual,On Net Total,On Previous Row Amount,On Previous Row Total,On Item Quantity)
 - Tax Rate(float)
@@ -77,7 +63,6 @@ item basic details(section)
   Item Tax(section)
 - Taxes(table-Item Tax)
   (section)
-- description
 
 3. Stock Ledger
 

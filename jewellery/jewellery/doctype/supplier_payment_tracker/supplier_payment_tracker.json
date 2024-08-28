@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "SPT.#####",
+ "creation": "2024-08-28 23:12:50.790398",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "supplier",
+  "supplier_name",
+  "pending_amount",
+  "pending_metal",
+  "column_break_tfwg",
+  "created_on",
+  "updated_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Supplier",
+   "options": "Supplier"
+  },
+  {
+   "fetch_from": "supplier.supplier_name",
+   "fieldname": "supplier_name",
+   "fieldtype": "Data",
+   "label": "Supplier Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pending_amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Pending Amount"
+  },
+  {
+   "fieldname": "pending_metal",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Pending Metal"
+  },
+  {
+   "fieldname": "column_break_tfwg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "created_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Created On"
+  },
+  {
+   "fieldname": "updated_on",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "Updated On"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-08-28 23:19:16.220404",
+ "modified_by": "Administrator",
+ "module": "Jewellery",
+ "name": "Supplier Payment Tracker",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
