@@ -71,8 +71,15 @@ item basic details(section)
 - uom (link - uom)
 - weight(float)
 - quantity(int)
-- amount
 - Transaction Type(select - debit or credit)
+
+Payment Ledger:
+
+- supplier(link-supplier)
+- customer(link - customer)
+- Transaction Type(select - debit or credit)
+- Pure Metal(float)
+- Amount
 
 Buying:
 

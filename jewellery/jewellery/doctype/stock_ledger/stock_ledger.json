@@ -11,7 +11,6 @@
   "uom",
   "weight",
   "quantity",
-  "amount",
   "transaction_type"
  ],
  "fields": [
@@ -20,51 +19,51 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Supplier",
-   "options": "Supplier"
+   "options": "Supplier",
+   "read_only": 1
   },
   {
    "fieldname": "item",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item",
-   "options": "Item"
+   "options": "Item",
+   "read_only": 1
   },
   {
    "fieldname": "uom",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "UOM",
-   "options": "Item UOM"
+   "options": "Item UOM",
+   "read_only": 1
   },
   {
    "fieldname": "weight",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Weight"
+   "label": "Weight",
+   "read_only": 1
   },
   {
    "fieldname": "quantity",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Quantity"
-  },
-  {
-   "fieldname": "amount",
-   "fieldtype": "Currency",
-   "in_list_view": 1,
-   "label": "Amount"
+   "label": "Quantity",
+   "read_only": 1
   },
   {
    "fieldname": "transaction_type",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Transaction Type",
-   "options": "Credit\nDebit"
+   "options": "Credit\nDebit",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 23:40:29.675987",
+ "modified": "2024-08-30 00:09:27.640254",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Stock Ledger",
