@@ -65,13 +65,17 @@
   {
    "fieldname": "date",
    "fieldtype": "Datetime",
-   "label": "Date"
+   "in_list_view": 1,
+   "label": "Date",
+   "reqd": 1
   },
   {
    "fieldname": "city",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "City",
-   "options": "City"
+   "options": "City",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_mdca",
@@ -93,7 +97,11 @@
    "description": "Pure Metal Rate (Example:- 24k gold 10 gram price enter)",
    "fieldname": "metal_rate",
    "fieldtype": "Float",
-   "label": "Metal Rate"
+   "in_list_view": 1,
+   "label": "Metal Rate",
+   "non_negative": 1,
+   "precision": "2",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_tmli",
@@ -117,26 +125,31 @@
   {
    "fieldname": "total_item",
    "fieldtype": "Int",
-   "label": "Total Item"
+   "label": "Total Item",
+   "read_only": 1
   },
   {
    "fieldname": "total_quantity",
    "fieldtype": "Int",
-   "label": "Total Quantity"
+   "label": "Total Quantity",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_wjmu",
    "fieldtype": "Column Break"
   },
   {
+   "description": "*Pure Fine",
    "fieldname": "total_net_weight",
    "fieldtype": "Float",
-   "label": "Total Net Weight"
+   "label": "Total Net Weight",
+   "read_only": 1
   },
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_sjow",
@@ -145,11 +158,13 @@
   {
    "fieldname": "net_total",
    "fieldtype": "Currency",
-   "label": "Net Total"
+   "label": "Net Total",
+   "read_only": 1
   },
   {
    "fieldname": "taxes_details_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Taxes Details"
   },
   {
@@ -191,7 +206,8 @@
   {
    "fieldname": "outstanding_amount",
    "fieldtype": "Currency",
-   "label": "Outstanding Amount"
+   "label": "Outstanding Amount",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_msia",
@@ -205,7 +221,8 @@
   {
    "fieldname": "outstanding_metal",
    "fieldtype": "Float",
-   "label": "Outstanding Metal"
+   "label": "Outstanding Metal",
+   "read_only": 1
   },
   {
    "fieldname": "address_and_contact_section",
@@ -250,8 +267,10 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "reqd": 1
   },
   {
    "fetch_from": "customer.customer_name",
@@ -271,7 +290,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-28 23:45:26.079258",
+ "modified": "2024-09-08 14:54:13.018335",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Sales Invoice",

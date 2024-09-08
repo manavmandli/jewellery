@@ -8,7 +8,8 @@
  "field_order": [
   "item",
   "uom",
-  "purity",
+  "purity_percentage",
+  "weight",
   "quantity",
   "amount"
  ],
@@ -21,35 +22,50 @@
    "options": "Item"
   },
   {
+   "fetch_from": "item.unit_of_measure",
    "fieldname": "uom",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "UOM",
-   "options": "Item UOM"
+   "options": "Item UOM",
+   "read_only": 1
   },
   {
-   "fieldname": "purity",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Purity"
-  },
-  {
+   "depends_on": "eval:row.uom ==  \"Piece\"",
    "fieldname": "quantity",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Quantity"
+   "label": "Quantity",
+   "read_only_depends_on": "eval:doc.uom == \"Piece\""
   },
   {
+   "depends_on": "eval:row.uom ==  \"Piece\"",
    "fieldname": "amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Amount"
+  },
+  {
+   "fieldname": "purity_percentage",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Purity Percentage",
+   "non_negative": 1,
+   "read_only_depends_on": "eval:doc.uom == \"Piece\""
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Weight",
+   "non_negative": 1,
+   "read_only_depends_on": "eval:doc.uom == \"Piece\""
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-08-27 23:09:39.671774",
+ "modified": "2024-09-08 15:01:37.012978",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Item Details",
