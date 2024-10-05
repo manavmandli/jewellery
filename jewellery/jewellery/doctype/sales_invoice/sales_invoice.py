@@ -32,7 +32,7 @@ class SalesInvoice(Document):
             self.total_quantity += item.quantity or 0
 
             # Calculate pure weight
-            pure_weight = (item.weight * item.purity_percentage) / 99.99
+            pure_weight = (item.weight * item.touch) / 99.99
             self.total_net_weight += pure_weight
 
             # Update total amount and net total

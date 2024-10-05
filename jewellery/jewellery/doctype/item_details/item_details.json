@@ -8,7 +8,7 @@
  "field_order": [
   "item",
   "uom",
-  "purity_percentage",
+  "touch",
   "weight",
   "quantity",
   "amount"
@@ -31,41 +31,36 @@
    "read_only": 1
   },
   {
-   "depends_on": "eval:row.uom ==  \"Piece\"",
    "fieldname": "quantity",
    "fieldtype": "Int",
    "in_list_view": 1,
-   "label": "Quantity",
-   "read_only_depends_on": "eval:doc.uom == \"Piece\""
+   "label": "Quantity"
   },
   {
-   "depends_on": "eval:row.uom ==  \"Piece\"",
    "fieldname": "amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
    "label": "Amount"
   },
   {
-   "fieldname": "purity_percentage",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Purity Percentage",
-   "non_negative": 1,
-   "read_only_depends_on": "eval:doc.uom == \"Piece\""
-  },
-  {
    "fieldname": "weight",
    "fieldtype": "Float",
    "in_list_view": 1,
    "label": "Weight",
-   "non_negative": 1,
-   "read_only_depends_on": "eval:doc.uom == \"Piece\""
+   "non_negative": 1
+  },
+  {
+   "fieldname": "touch",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Touch",
+   "non_negative": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-09-08 15:01:37.012978",
+ "modified": "2024-09-08 17:57:43.648933",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Item Details",
