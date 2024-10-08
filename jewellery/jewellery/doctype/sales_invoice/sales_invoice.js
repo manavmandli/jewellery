@@ -2,6 +2,9 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Sales Invoice", {
+  refresh(frm){
+    
+  },
   city(frm) {
     frm.set_query("customer", function () {
       return {
@@ -14,43 +17,20 @@ frappe.ui.form.on("Sales Invoice", {
 });
 
 frappe.ui.form.on("Item Details", {
-  uom(frm, cdt, cdn) {
+  item: function (frm, cdt, cdn) {
     const row = locals[cdt][cdn];
     if (row.uom == "Piece") {
-      frappe.meta.get_docfield(
-        "Item Details",
-        "touch",
-        frm.doc.name
-      ).hidden = 1;
-      frappe.meta.get_docfield(
-        "Item Details",
-        "weight",
-        frm.doc.name
-      ).hidden = 1;
-      frappe.meta.get_docfield(
-        "Item Details",
-        "quantity",
-        frm.doc.name
-      ).reqd = 1;
-      frappe.meta.get_docfield("Item Details", "amount", frm.doc.name).reqd = 1;
-    } else {
-      frappe.meta.get_docfield(
-        "Item Details",
-        "touch",
-        frm.doc.name
-      ).hidden = 0;
-      frappe.meta.get_docfield(
-        "Item Details",
-        "weight",
-        frm.doc.name
-      ).hidden = 0;
-      frappe.meta.get_docfield(
-        "Item Details",
-        "quantity",
-        frm.doc.name
-      ).reqd = 0;
-      frappe.meta.get_docfield("Item Details", "amount", frm.doc.name).reqd = 0;
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('touch', false);
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('weight', false);
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('quantity', true);
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('amount', true);
     }
-    frm.refresh_field("item_details"); // Ensure the child table refreshes
+    else if (row.uom == "Metal") {
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('touch', true);
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('weight', true);
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('quantity', false);
+      frm.fields_dict['items'].grid.grid_rows_by_docname[cdn].toggle_editable('amount', false);
+    }
+    frm.refresh_field("items"); 
   },
 });

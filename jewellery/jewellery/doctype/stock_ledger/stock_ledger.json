@@ -6,7 +6,6 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "supplier",
   "item",
   "uom",
   "weight",
@@ -14,14 +13,6 @@
   "transaction_type"
  ],
  "fields": [
-  {
-   "fieldname": "supplier",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Supplier",
-   "options": "Supplier",
-   "read_only": 1
-  },
   {
    "fieldname": "item",
    "fieldtype": "Link",
@@ -63,7 +54,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-30 00:09:27.640254",
+ "modified": "2024-10-06 16:12:22.803279",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Stock Ledger",
