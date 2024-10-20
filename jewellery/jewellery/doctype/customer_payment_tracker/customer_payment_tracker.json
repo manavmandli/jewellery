@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "CPT.#####",
+ "autoname": "field:customer",
  "creation": "2024-08-28 23:48:48.932312",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -48,7 +48,8 @@
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Customer",
-   "options": "Customer"
+   "options": "Customer",
+   "unique": 1
   },
   {
    "fetch_from": "customer.customer_name",
@@ -60,11 +61,11 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-28 23:49:34.447931",
+ "modified": "2024-10-20 23:27:19.828928",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Customer Payment Tracker",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

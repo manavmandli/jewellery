@@ -12,7 +12,6 @@
   "city",
   "column_break_mdca",
   "is_paid",
-  "is_return",
   "metal_rate",
   "supplier_details_section",
   "supplier",
@@ -35,11 +34,11 @@
   "payment_details_section",
   "payment_mode",
   "section_break_wuxc",
-  "paid_amount",
-  "outstanding_amount",
-  "column_break_msia",
   "paid_metal",
+  "paid_amount",
+  "column_break_khpm",
   "outstanding_metal",
+  "outstanding_amount",
   "address_and_contact_section",
   "supplier_address",
   "column_break_pixe",
@@ -81,13 +80,8 @@
    "default": "0",
    "fieldname": "is_paid",
    "fieldtype": "Check",
-   "label": "Is Paid"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_return",
-   "fieldtype": "Check",
-   "label": "Is Return"
+   "label": "Is Paid",
+   "read_only": 1
   },
   {
    "fieldname": "supplier_details_section",
@@ -135,7 +129,8 @@
   {
    "fieldname": "total_item",
    "fieldtype": "Int",
-   "label": "Total Item"
+   "label": "Total Item",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_wjmu",
@@ -144,17 +139,20 @@
   {
    "fieldname": "total_quantity",
    "fieldtype": "Int",
-   "label": "Total Quantity"
+   "label": "Total Quantity",
+   "read_only": 1
   },
   {
    "fieldname": "total_net_weight",
    "fieldtype": "Float",
-   "label": "Total Net Weight"
+   "label": "Total Net Weight",
+   "read_only": 1
   },
   {
    "fieldname": "total_amount",
    "fieldtype": "Currency",
-   "label": "Total Amount"
+   "label": "Total Amount",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_sjow",
@@ -163,7 +161,8 @@
   {
    "fieldname": "net_total",
    "fieldtype": "Currency",
-   "label": "Net Total"
+   "label": "Net Total",
+   "read_only": 1
   },
   {
    "fieldname": "taxes_and_charges",
@@ -184,6 +183,7 @@
   {
    "fieldname": "taxes_details_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Taxes Details"
   },
   {
@@ -209,11 +209,8 @@
   {
    "fieldname": "outstanding_amount",
    "fieldtype": "Currency",
-   "label": "Outstanding Amount"
-  },
-  {
-   "fieldname": "column_break_msia",
-   "fieldtype": "Column Break"
+   "label": "Outstanding Amount",
+   "read_only": 1
   },
   {
    "fieldname": "paid_metal",
@@ -223,7 +220,8 @@
   {
    "fieldname": "outstanding_metal",
    "fieldtype": "Float",
-   "label": "Outstanding Metal"
+   "label": "Outstanding Metal",
+   "read_only": 1
   },
   {
    "fieldname": "address_and_contact_section",
@@ -256,12 +254,16 @@
    "fieldname": "remark",
    "fieldtype": "Small Text",
    "label": "Remark"
+  },
+  {
+   "fieldname": "column_break_khpm",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-28 23:40:48.724292",
+ "modified": "2024-10-20 23:55:09.597917",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Purchase Invoice",

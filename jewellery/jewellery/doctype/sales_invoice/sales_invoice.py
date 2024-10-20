@@ -16,10 +16,13 @@ class SalesInvoice(Document):
         self.update_stock_balance(update=True)
         self.create_payment_ledger()
         self.create_stock_ledger()
-        self.customer_payment_tracker()
+        self.customer_payment_tracker(update=True)
 
     def on_cancel(self):
         self.update_stock_balance(update=False)
+        self.delete_payment_ledger()
+        self.delete_stock_ledger()
+        self.customer_payment_tracker(update=False)
 
     def update_details(self):
         # Initialize totals to zero before calculations
@@ -52,6 +55,9 @@ class SalesInvoice(Document):
         self.outstanding_amount = self.total_amount - (self.paid_amount or 0)
         self.outstanding_metal = self.total_net_weight - (self.paid_metal or 0)
 
+        if self.outstanding_amount == 0 and self.outstanding_metal == 0:
+            self.is_paid = 1
+
     def _validate_stock(self, item, item_doc):
         """Check if stock is available for weight and quantity."""
         if (item.weight or 0) > (item_doc.item_weight or 0):
@@ -82,63 +88,96 @@ class SalesInvoice(Document):
                 item_doc.save()
 
     def create_payment_ledger(self):
-        pass
-        # if self.paid_amount:
-        #     payment_doc = frappe.get_doc(
-        #         dict(
-        #             doctype="Payment Ledger",
-        #             date=now(),
-        #             customer=self.customer,
-        #             transaction_type="Credit",
-        #             amount=self.paid_amount,
-        #         )
-        #     )
-        #     payment_doc.insert(ignore_permissions=True)
-        # if self.paid_metal:
-        #     payment_doc = frappe.get_doc(
-        #         dict(
-        #             doctype="Payment Ledger",
-        #             date=now(),
-        #             customer=self.customer,
-        #             transaction_type="Credit",
-        #             pure_metal=self.paid_metal,
-        #         )
-        #     )
-        #     payment_doc.insert(ignore_permissions=True)
+        if self.paid_amount:
+            payment_doc = frappe.get_doc(
+                dict(
+                    doctype="Payment Ledger",
+                    date=now(),
+                    customer=self.customer,
+                    transaction_type="Credit",
+                    amount=self.paid_amount,
+                )
+            )
+            payment_doc.insert(ignore_permissions=True)
+        if self.paid_metal:
+            payment_doc = frappe.get_doc(
+                dict(
+                    doctype="Payment Ledger",
+                    date=now(),
+                    customer=self.customer,
+                    transaction_type="Credit",
+                    pure_metal=self.paid_metal,
+                )
+            )
+            payment_doc.insert(ignore_permissions=True)
+
+    def delete_payment_ledger(self):
+        if self.paid_amount or self.paid_metal:
+            payment_docs = frappe.get_all(
+                "Payment Ledger",
+                filters={
+                    "customer": self.customer,
+                    "transaction_type": "Credit",
+                },
+            )
+            for payment_doc in payment_docs:
+                frappe.delete_doc("Payment Ledger", payment_doc.name)
 
     def create_stock_ledger(self):
-        pass
-        # for itm in self.items:
-        #     stock_doc = frappe.get_doc(
-        #         dict(
-        #             doctype="Stock Ledger",
-        #             item=itm.item,
-        #             uom=itm.uom,
-        #             weight=itm.weight or 0,
-        #             quantity=itm.quantity or 0,
-        #             transaction_type="Debit",
-        #         )
-        #     )
-        #     stock_doc.insert(ignore_permissions=True)
+        for itm in self.items:
+            stock_doc = frappe.get_doc(
+                dict(
+                    doctype="Stock Ledger",
+                    item=itm.item,
+                    uom=itm.uom,
+                    weight=itm.weight or 0,
+                    quantity=itm.quantity or 0,
+                    transaction_type="Debit",
+                )
+            )
+            stock_doc.insert(ignore_permissions=True)
 
-    def customer_payment_tracker(self):
-        pass
-        # if not frappe.db.exists("Customer Payment Tracker", self.customer):
-        #     payment_tracker_doc = frappe.get_doc(
-        #         dict(
-        #             doctype="Customer Payment Tracker",
-        #             customer=self.customer,
-        #             pending_amount=self.outstanding_amount,
-        #             pending_metal=self.outstanding_metal,
-        #             created_on=now(),
-        #         )
-        #     )
-        #     payment_tracker_doc.insert(ignore_permissions=True)
-        # else:
-        #     payment_tracker_doc = frappe.get_doc(
-        #         "Customer Payment Tracker", self.customer
-        #     )
-        #     payment_tracker_doc.pending_amount += self.outstanding_amount
-        #     payment_tracker_doc.pending_metal += self.outstanding_metal
-        #     payment_tracker_doc.updated_on = now()
-        #     payment_tracker_doc.save(ignore_permissions=True)
+    def delete_stock_ledger(self):
+        for itm in self.items:
+            stock_docs = frappe.get_all(
+                "Stock Ledger",
+                filters={
+                    "item": itm.item,
+                    "transaction_type": "Debit",
+                },
+            )
+            for stock_doc in stock_docs:
+                frappe.delete_doc("Stock Ledger", stock_doc.name)
+
+    def customer_payment_tracker(self, update):
+        if not frappe.db.exists("Customer Payment Tracker", self.customer):
+            payment_tracker_doc = frappe.get_doc(
+                dict(
+                    doctype="Customer Payment Tracker",
+                    customer=self.customer,
+                    pending_amount=self.outstanding_amount,
+                    pending_metal=self.outstanding_metal,
+                    created_on=now(),
+                )
+            )
+            payment_tracker_doc.insert(ignore_permissions=True)
+            frappe.db.commit()
+        else:
+            if update:
+                payment_tracker_doc = frappe.get_doc(
+                    "Customer Payment Tracker", self.customer
+                )
+                payment_tracker_doc.pending_amount += self.outstanding_amount
+                payment_tracker_doc.pending_metal += self.outstanding_metal
+                payment_tracker_doc.updated_on = now()
+                payment_tracker_doc.save(ignore_permissions=True)
+                frappe.db.commit()
+            else:
+                payment_tracker_doc = frappe.get_doc(
+                    "Customer Payment Tracker", self.customer
+                )
+                payment_tracker_doc.pending_amount -= self.outstanding_amount
+                payment_tracker_doc.pending_metal -= self.outstanding_metal
+                payment_tracker_doc.updated_on = now()
+                payment_tracker_doc.save(ignore_permissions=True)
+                frappe.db.commit()

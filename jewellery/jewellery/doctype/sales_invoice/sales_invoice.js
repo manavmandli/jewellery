@@ -2,9 +2,6 @@
 // For license information, please see license.txt
 
 frappe.ui.form.on("Sales Invoice", {
-  refresh(frm){
-    
-  },
   city(frm) {
     frm.set_query("customer", function () {
       return {

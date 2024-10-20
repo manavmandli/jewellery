@@ -11,7 +11,6 @@
   "city",
   "column_break_mdca",
   "is_paid",
-  "is_return",
   "metal_rate",
   "customer_details_section",
   "customer",
@@ -85,13 +84,8 @@
    "default": "0",
    "fieldname": "is_paid",
    "fieldtype": "Check",
-   "label": "Is Paid"
-  },
-  {
-   "default": "0",
-   "fieldname": "is_return",
-   "fieldtype": "Check",
-   "label": "Is Return"
+   "label": "Is Paid",
+   "read_only": 1
   },
   {
    "description": "Pure Metal Rate (Example:- 24k gold 10 gram price enter)",
@@ -290,7 +284,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-09 00:21:52.576695",
+ "modified": "2024-10-20 22:14:49.137608",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Sales Invoice",
