@@ -35,21 +35,22 @@
   {
    "fieldname": "item_name",
    "fieldtype": "Data",
-   "label": "Item Name"
+   "label": "Item Name",
+   "reqd": 1
   },
   {
    "fieldname": "item_group",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Item Group",
-   "options": "Item Group",
-   "reqd": 1
+   "options": "Item Group"
   },
   {
    "fieldname": "unit_of_measure",
    "fieldtype": "Link",
    "label": "Unit of Measure",
-   "options": "Item UOM"
+   "options": "Item UOM",
+   "reqd": 1
   },
   {
    "fieldname": "item_quantity",
@@ -108,7 +109,7 @@
    "fieldname": "purity",
    "fieldtype": "Select",
    "label": "Purity",
-   "options": "24k\n22k\n18k"
+   "options": "\n24k\n22k\n18k"
   },
   {
    "fieldname": "certificate_number",
@@ -127,7 +128,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-29 23:31:45.245172",
+ "modified": "2024-10-21 23:20:02.006064",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Item",
@@ -147,7 +148,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "item_name"
 }

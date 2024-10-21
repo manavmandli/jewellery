@@ -14,7 +14,9 @@
   {
    "fieldname": "supplier_group_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Supplier Group Name",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -25,12 +27,13 @@
    "default": "0",
    "fieldname": "disbled",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Disbled"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 23:51:13.626469",
+ "modified": "2024-10-21 23:00:11.334100",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Supplier Group",
@@ -50,7 +53,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "supplier_group_name"
 }

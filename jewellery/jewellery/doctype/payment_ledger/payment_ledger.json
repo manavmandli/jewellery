@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "PAY-LED.#####",
+ "autoname": "PL.#####",
  "creation": "2024-09-03 22:15:36.417455",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -22,7 +22,6 @@
   {
    "fieldname": "supplier",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Supplier",
    "options": "Supplier",
    "read_only": 1
@@ -34,7 +33,6 @@
   {
    "fieldname": "customer",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Customer",
    "options": "Customer",
    "read_only": 1
@@ -76,7 +74,9 @@
   {
    "fieldname": "date",
    "fieldtype": "Datetime",
-   "label": "Date"
+   "in_list_view": 1,
+   "label": "Date",
+   "read_only": 1
   },
   {
    "fieldname": "section_break_kmkc",
@@ -85,7 +85,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-03 22:54:04.737436",
+ "modified": "2024-10-21 22:48:04.663358",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Payment Ledger",

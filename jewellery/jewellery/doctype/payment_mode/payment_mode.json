@@ -20,7 +20,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 22:56:12.859492",
+ "modified": "2024-10-21 22:54:57.975706",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Payment Mode",
@@ -40,7 +40,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "payment_mode"
 }

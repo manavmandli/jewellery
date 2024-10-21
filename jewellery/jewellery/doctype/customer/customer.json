@@ -33,8 +33,10 @@
   {
    "fieldname": "city",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "City",
-   "options": "City"
+   "options": "City",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_gjir",
@@ -58,7 +60,9 @@
   {
    "fieldname": "mobile_no",
    "fieldtype": "Data",
-   "label": "Mobile No."
+   "in_list_view": 1,
+   "label": "Mobile No.",
+   "reqd": 1
   },
   {
    "fieldname": "website",
@@ -68,7 +72,9 @@
   {
    "fieldname": "shop_address",
    "fieldtype": "Data",
-   "label": "Shop Address"
+   "in_list_view": 1,
+   "label": "Shop Address",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_usgr",
@@ -130,7 +136,9 @@
   {
    "fieldname": "customer_name",
    "fieldtype": "Data",
-   "label": "Customer Name"
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
   },
   {
    "fieldname": "customer_group",
@@ -141,7 +149,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-28 23:35:09.398830",
+ "modified": "2024-10-21 23:01:51.650348",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Customer",
@@ -161,7 +169,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "customer_name"
 }

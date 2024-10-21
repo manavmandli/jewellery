@@ -48,13 +48,16 @@
    "fieldname": "supplier",
    "fieldtype": "Link",
    "label": "Supplier",
-   "options": "Supplier"
+   "options": "Supplier",
+   "reqd": 1
   },
   {
    "fetch_from": "supplier.supplier_name",
    "fieldname": "supplier_name",
    "fieldtype": "Data",
-   "label": "Supplier Name"
+   "in_list_view": 1,
+   "label": "Supplier Name",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_tjds",
@@ -63,7 +66,9 @@
   {
    "fieldname": "payment_date",
    "fieldtype": "Datetime",
-   "label": "Payment Date"
+   "in_list_view": 1,
+   "label": "Payment Date",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_msxc",
@@ -72,6 +77,7 @@
   {
    "fieldname": "amount",
    "fieldtype": "Currency",
+   "in_list_view": 1,
    "label": "Amount"
   },
   {
@@ -81,6 +87,7 @@
   {
    "fieldname": "purity",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Purity",
    "options": "24K\n22K\n18K"
   },
@@ -91,13 +98,16 @@
   {
    "fieldname": "weight",
    "fieldtype": "Float",
+   "in_list_view": 1,
    "label": "Weight"
   },
   {
    "description": "Pure Metal Rate (Example:- 24k gold 10 gram price enter)",
    "fieldname": "metal_rate",
    "fieldtype": "Float",
-   "label": "Metal Rate"
+   "label": "Metal Rate",
+   "non_negative": 1,
+   "reqd": 1
   },
   {
    "fieldname": "section_break_aycr",
@@ -107,7 +117,8 @@
    "fieldname": "payment_mode",
    "fieldtype": "Link",
    "label": "Payment Mode",
-   "options": "Payment Mode"
+   "options": "Payment Mode",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_claa",
@@ -121,7 +132,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-08-28 23:54:13.873044",
+ "modified": "2024-10-21 22:51:24.899279",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Supplier Bill Payment",

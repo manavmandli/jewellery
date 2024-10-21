@@ -19,13 +19,15 @@
    "fieldname": "pending_amount",
    "fieldtype": "Currency",
    "in_list_view": 1,
-   "label": "Pending Amount"
+   "label": "Pending Amount",
+   "read_only": 1
   },
   {
    "fieldname": "pending_metal",
    "fieldtype": "Float",
    "in_list_view": 1,
-   "label": "Pending Metal"
+   "label": "Pending Metal",
+   "read_only": 1
   },
   {
    "fieldname": "column_break_tfwg",
@@ -35,33 +37,36 @@
    "fieldname": "created_on",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "Created On"
+   "label": "Created On",
+   "read_only": 1
   },
   {
    "fieldname": "updated_on",
    "fieldtype": "Datetime",
    "in_list_view": 1,
-   "label": "Updated On"
+   "label": "Updated On",
+   "read_only": 1
   },
   {
    "fieldname": "customer",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Customer",
    "options": "Customer",
+   "read_only": 1,
    "unique": 1
   },
   {
    "fetch_from": "customer.customer_name",
    "fieldname": "customer_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Customer Name",
    "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-20 23:27:19.828928",
+ "modified": "2024-10-21 22:41:07.852877",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Customer Payment Tracker",

@@ -5,7 +5,7 @@ frappe.ui.form.on("Item", {
   unit_of_measure(frm) {
     if (frm.doc.unit_of_measure === "Piece") {
       set_read_only_fields(frm, false, true); // Quantity editable, Weight read-only
-    } else if (frm.doc.unit_of_measure === "Gram") {
+    } else if (frm.doc.unit_of_measure === "Metal") {
       set_read_only_fields(frm, true, false); // Quantity read-only, Weight editable
     } else {
       set_read_only_fields(frm, false, false); // Both editable

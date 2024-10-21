@@ -29,11 +29,13 @@
    "default": "0",
    "fieldname": "disabled",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Disabled"
   },
   {
    "fieldname": "item_tax_section",
    "fieldtype": "Section Break",
+   "hidden": 1,
    "label": "Item Tax"
   },
   {
@@ -45,7 +47,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-27 23:36:25.575015",
+ "modified": "2024-10-21 22:57:35.545280",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Item Group",
@@ -65,7 +67,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "item_group_name"
 }

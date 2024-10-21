@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "item_details_tab",
   "section_break_uwje",
   "amended_from",
   "date",
@@ -27,10 +28,12 @@
   "total_amount",
   "column_break_sjow",
   "net_total",
+  "taxes_and_charges_tab",
   "taxes_details_section",
   "taxes_and_charges",
   "total_taxes_and_charges",
   "grand_total",
+  "payment_details_tab",
   "payment_details_section",
   "payment_mode",
   "section_break_wuxc",
@@ -64,13 +67,15 @@
   {
    "fieldname": "date",
    "fieldtype": "Datetime",
-   "label": "Date"
+   "label": "Date",
+   "reqd": 1
   },
   {
    "fieldname": "city",
    "fieldtype": "Link",
    "label": "City",
-   "options": "City"
+   "options": "City",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_mdca",
@@ -92,7 +97,8 @@
    "fieldname": "supplier",
    "fieldtype": "Link",
    "label": "Supplier",
-   "options": "Supplier"
+   "options": "Supplier",
+   "reqd": 1
   },
   {
    "fetch_from": "supplier.supplier_name",
@@ -105,7 +111,9 @@
    "description": "Pure Metal Rate (Example:- 24k gold 10 gram price enter)",
    "fieldname": "metal_rate",
    "fieldtype": "Float",
-   "label": "Metal Rate"
+   "in_list_view": 1,
+   "label": "Metal Rate",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_tmli",
@@ -143,6 +151,7 @@
    "read_only": 1
   },
   {
+   "description": "*Pure Fine",
    "fieldname": "total_net_weight",
    "fieldtype": "Float",
    "label": "Total Net Weight",
@@ -258,12 +267,27 @@
   {
    "fieldname": "column_break_khpm",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "taxes_and_charges_tab",
+   "fieldtype": "Tab Break",
+   "label": "Taxes & Charges"
+  },
+  {
+   "fieldname": "payment_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Payment Details"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-20 23:55:09.597917",
+ "modified": "2024-10-21 22:39:41.753600",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Purchase Invoice",

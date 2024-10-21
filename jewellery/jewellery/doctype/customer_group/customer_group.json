@@ -19,18 +19,21 @@
    "default": "0",
    "fieldname": "disbled",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Disbled"
   },
   {
    "fieldname": "customer_group_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Customer Group Name",
+   "reqd": 1,
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-08-28 23:33:18.416014",
+ "modified": "2024-10-21 23:00:45.327420",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Customer Group",
@@ -50,7 +53,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "customer_group_name"
 }
