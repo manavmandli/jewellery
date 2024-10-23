@@ -16,7 +16,11 @@
   "section_break_axbz",
   "pure_metal",
   "column_break_pkax",
-  "amount"
+  "amount",
+  "section_break_hvmy",
+  "reference_doctype",
+  "column_break_twxj",
+  "reference_doctype_name"
  ],
  "fields": [
   {
@@ -81,11 +85,31 @@
   {
    "fieldname": "section_break_kmkc",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_hvmy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "label": "Reference Doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_twxj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reference_doctype_name",
+   "fieldtype": "Data",
+   "label": "Reference Doctype Name",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-21 22:48:04.663358",
+ "modified": "2024-10-23 23:27:25.163682",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Payment Ledger",

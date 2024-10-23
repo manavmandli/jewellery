@@ -14,16 +14,20 @@
   "column_break_tjds",
   "payment_date",
   "metal_rate",
+  "outstanding_payment_details_section",
+  "outstanding_amount",
+  "column_break_ekem",
+  "outstanding_metal",
   "section_break_aycr",
   "payment_mode",
   "column_break_claa",
   "column_break_tfhv",
   "section_break_msxc",
-  "amount",
-  "column_break_bmeq",
   "purity",
+  "column_break_bmeq",
+  "amount",
   "column_break_vxqv",
-  "weight"
+  "metal"
  ],
  "fields": [
   {
@@ -96,12 +100,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "weight",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Weight"
-  },
-  {
    "description": "Pure Metal Rate (Example:- 24k gold 10 gram price enter)",
    "fieldname": "metal_rate",
    "fieldtype": "Float",
@@ -127,12 +125,39 @@
   {
    "fieldname": "column_break_tfhv",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "metal",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Metal"
+  },
+  {
+   "fieldname": "outstanding_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Outstanding Payment Details"
+  },
+  {
+   "fieldname": "column_break_ekem",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_metal",
+   "fieldtype": "Float",
+   "label": "Outstanding Metal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-21 22:51:24.899279",
+ "modified": "2024-10-24 00:37:23.221882",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Supplier Bill Payment",

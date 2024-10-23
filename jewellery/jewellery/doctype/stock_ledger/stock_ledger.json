@@ -10,7 +10,9 @@
   "uom",
   "weight",
   "quantity",
-  "transaction_type"
+  "transaction_type",
+  "reference_doctype",
+  "reference_doctype_name"
  ],
  "fields": [
   {
@@ -50,11 +52,24 @@
    "label": "Transaction Type",
    "options": "Credit\nDebit",
    "read_only": 1
+  },
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Data",
+   "label": "Reference Doctype",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reference_doctype_name",
+   "fieldtype": "Link",
+   "label": "Reference Doctype Name",
+   "options": "DocType",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-06 16:12:22.803279",
+ "modified": "2024-10-23 23:39:57.177417",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Stock Ledger",

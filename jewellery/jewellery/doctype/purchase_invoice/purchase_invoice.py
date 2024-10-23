@@ -81,6 +81,8 @@ class PurchaseInvoice(Document):
                     supplier=self.supplier,
                     transaction_type="Debit",
                     amount=self.paid_amount,
+                    reference_doctype= self.name,
+                    reference_doctype_name=self.doctype
                 )
             )
             payment_doc.insert(ignore_permissions=True)
@@ -92,6 +94,8 @@ class PurchaseInvoice(Document):
                     supplier=self.supplier,
                     transaction_type="Debit",
                     pure_metal=self.paid_metal,
+                    reference_doctype=self.name,
+                    reference_doctype_name=self.doctype,
                 )
             )
             payment_doc.insert(ignore_permissions=True)
@@ -101,8 +105,8 @@ class PurchaseInvoice(Document):
             payment_docs = frappe.get_all(
                 "Payment Ledger",
                 filters={
-                    "supplier": self.supplier,
-                    "transaction_type": "Debit",
+                    "reference_doctype":self.name,
+                    "reference_doctype_name":self.doctype
                 },
             )
             for payment_doc in payment_docs:
@@ -111,28 +115,29 @@ class PurchaseInvoice(Document):
     def create_stock_ledger(self):
         for itm in self.items:
             stock_doc = frappe.get_doc(
-				dict(
-					doctype="Stock Ledger",
-					item=itm.item,
-					uom=itm.uom,
-					weight=itm.weight or 0,
-					quantity=itm.quantity or 0,
-					transaction_type="Credit",
-				)
-			)
+                dict(
+                    doctype="Stock Ledger",
+                    item=itm.item,
+                    uom=itm.uom,
+                    weight=itm.weight or 0,
+                    quantity=itm.quantity or 0,
+                    transaction_type="Credit",
+                    reference_doctype=self.name,
+                    reference_doctype_name=self.doctype,
+                )
+            )
             stock_doc.insert(ignore_permissions=True)
 
     def delete_stock_ledger(self):
-        for itm in self.items:
-            stock_docs = frappe.get_all(
-                "Stock Ledger",
-                filters={
-                    "item": itm.item,
-                    "transaction_type": "Credit",
-                },
-            )
-            for stock_doc in stock_docs:
-                frappe.delete_doc("Stock Ledger", stock_doc.name)
+        stock_docs = frappe.get_all(
+            "Stock Ledger",
+            filters = {
+                "reference_doctype":self.name,
+                "reference_doctype_name":self.doctype
+            },
+        )
+        for stock_doc in stock_docs:
+            frappe.delete_doc("Stock Ledger", stock_doc.name)
 
     def supplier_payment_tracker(self, update):
         if not frappe.db.exists("Supplier Payment Tracker", self.supplier):
