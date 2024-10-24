@@ -1,4 +1,4 @@
-## Jewellery
+## Jewellery ERP
 
 Jewellery Software
 
