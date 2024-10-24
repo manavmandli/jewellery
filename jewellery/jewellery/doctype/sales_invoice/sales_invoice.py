@@ -8,7 +8,6 @@ from frappe.utils import now
 
 class SalesInvoice(Document):
     def validate(self):
-        # form intenal calculation
         self.update_details()
 
     # update other details

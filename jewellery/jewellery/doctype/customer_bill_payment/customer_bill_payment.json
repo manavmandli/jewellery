@@ -14,16 +14,20 @@
   "column_break_tjds",
   "payment_date",
   "metal_rate",
+  "outstanding_payment_details_section",
+  "outstanding_amount",
+  "column_break_rvnl",
+  "outstanding_metal",
   "section_break_gsvo",
   "payment_mode",
   "column_break_qdwb",
   "column_break_jgiz",
   "section_break_msxc",
-  "amount",
-  "column_break_bmeq",
   "purity",
+  "column_break_bmeq",
+  "amount",
   "column_break_vxqv",
-  "weight"
+  "metal"
  ],
  "fields": [
   {
@@ -97,12 +101,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "weight",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Weight"
-  },
-  {
    "fieldname": "amended_from",
    "fieldtype": "Link",
    "label": "Amended From",
@@ -137,12 +135,39 @@
   {
    "fieldname": "column_break_jgiz",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Outstanding Payment Details"
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rvnl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outstanding_metal",
+   "fieldtype": "Float",
+   "label": "Outstanding Metal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "metal",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Metal"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-21 22:52:16.190910",
+ "modified": "2024-10-24 23:46:53.083968",
  "modified_by": "Administrator",
  "module": "Jewellery",
  "name": "Customer Bill Payment",
